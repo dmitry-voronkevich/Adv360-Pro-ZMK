@@ -51,7 +51,7 @@
         &trans       &trans &trans &trans &trans &trans  &none                                                       &none   &trans &trans &trans &trans  &trans  &mF12
         &trans       &trans &trans &trans &trans &trans  &none        &trans &trans             &trans &trans        &none   &trans &trans &trans &trans  &trans  &trans
         &trans       &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none          &trans &trans &trans &trans  &trans  &trans
-        &tog DEFAULT &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                &trans &trans &trans  &trans  &tog DEFAULT
+        &tog FN      &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                &trans &trans &trans  &trans  &tog FN
       >;
     };
     mod {

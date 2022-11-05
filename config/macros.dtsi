@@ -1,38 +1,38 @@
   ZMK_MACRO(mF1,
-      bindings = <&kp F1>, <&tog DEFAULT>;
+      bindings = <&kp F1>, <&tog FN>;
   )
   ZMK_MACRO(mF2,
-      bindings = <&kp F2>, <&tog DEFAULT>;
+      bindings = <&kp F2>, <&tog FN>;
   )
   ZMK_MACRO(mF3,
-      bindings = <&kp F3>, <&tog DEFAULT>;
+      bindings = <&kp F3>, <&tog FN>;
   )
   ZMK_MACRO(mF4,
-      bindings = <&kp F4>, <&tog DEFAULT>;
+      bindings = <&kp F4>, <&tog FN>;
   )
   ZMK_MACRO(mF5,
-      bindings = <&kp F5>, <&tog DEFAULT>;
+      bindings = <&kp F5>, <&tog FN>;
   )
   ZMK_MACRO(mF6,
-      bindings = <&kp F6>, <&tog DEFAULT>;
+      bindings = <&kp F6>, <&tog FN>;
   )
   ZMK_MACRO(mF7,
-      bindings = <&kp F7>, <&tog DEFAULT>;
+      bindings = <&kp F7>, <&tog FN>;
   )
   ZMK_MACRO(mF8,
-      bindings = <&kp F8>, <&tog DEFAULT>;
+      bindings = <&kp F8>, <&tog FN>;
   )
   ZMK_MACRO(mF9,
-      bindings = <&kp F9>, <&tog DEFAULT>;
+      bindings = <&kp F9>, <&tog FN>;
   )
   ZMK_MACRO(mF10,
-      bindings = <&kp F10>, <&tog DEFAULT>;
+      bindings = <&kp F10>, <&tog FN>;
   )
   ZMK_MACRO(mF11,
-      bindings = <&kp F11>, <&tog DEFAULT>;
+      bindings = <&kp F11>, <&tog FN>;
   )
   ZMK_MACRO(mF12,
-      bindings = <&kp F12>, <&tog DEFAULT>;
+      bindings = <&kp F12>, <&tog FN>;
   )
   macro_quotes: macro_quotes {
     compatible = "zmk,behavior-macro";
