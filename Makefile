@@ -10,7 +10,7 @@ build: firmware/$$(TIMESTAMP)-left.uf2 firmware/$$(TIMESTAMP)-right.uf2
 clean:
 	rm -f firmware/*.uf2
 
-firmware/%-left.uf2 firmware/%-right.uf2: config/adv360.keymap
+firmware/%-left.uf2 firmware/%-right.uf2: config/adv360.keymap config/macros.dtsi
 	$(DOCKER) run --rm -it --name zmk \
 		-v $(PWD)/firmware:/app/firmware \
 		-v $(PWD)/config:/app/config:ro \
