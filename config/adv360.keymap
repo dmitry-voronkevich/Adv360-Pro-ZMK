@@ -55,11 +55,11 @@
     };
     fn {
       bindings = <
-        &kp EQUAL    &mF1   &mF2   &mF3   &mF4   &mF5    &tog KEYPAD                                                 &mo MOD &mF6   &mF7   &mF8   &mF9    &mF10   &mF11
+        &trans       &mF1   &mF2   &mF3   &mF4   &mF5    &tog KEYPAD                                                 &mo MOD &mF6   &mF7   &mF8   &mF9    &mF10   &mF11
         &trans       &trans &trans &trans &trans &trans  &none                                                       &none   &trans &trans &trans &trans  &trans  &mF12
         &trans       &trans &trans &trans &trans &trans  &none        &trans &trans             &trans &trans        &none   &trans &trans &trans &trans  &trans  &trans
         &trans       &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none          &trans &trans &trans &trans  &trans  &trans
-        &tog FN      &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                &trans &trans &trans  &trans  &tog FN
+        MO_TOG(FN)   &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                &trans &trans &trans  &trans  MO_TOG(FN)
       >;
     };
     mod {
