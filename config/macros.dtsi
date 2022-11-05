@@ -1,5 +1,5 @@
   ZMK_MACRO(mF1,
-      bindings = <&kp F1>, <&toggle DEFAULT>;
+      bindings = <&kp F1>, <&tog DEFAULT>;
   )
   macro_quotes: macro_quotes {
     compatible = "zmk,behavior-macro";
