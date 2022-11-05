@@ -47,8 +47,8 @@
     };
     fn {
       bindings = <
-        &mF1         &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog KEYPAD                                                  &mo MOD &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans       &trans &trans &trans &trans &trans  &none                                                       &none   &trans &trans &trans &trans  &trans  &trans
+        &kp EQUAL    &mF1   &mF2   &mF3   &mF4   &mF5    &tog KEYPAD                                                 &mo MOD &mF6   &mF7   &mF8   &mF9    &mF10   &mF11
+        &trans       &trans &trans &trans &trans &trans  &none                                                       &none   &trans &trans &trans &trans  &trans  &mF12
         &trans       &trans &trans &trans &trans &trans  &none        &trans &trans             &trans &trans        &none   &trans &trans &trans &trans  &trans  &trans
         &trans       &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none          &trans &trans &trans &trans  &trans  &trans
         &tog DEFAULT &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                &trans &trans &trans  &trans  &tog DEFAULT
