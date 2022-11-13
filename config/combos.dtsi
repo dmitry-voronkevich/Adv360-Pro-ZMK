@@ -1,0 +1,18 @@
+#define KP_E        13
+#define KP_RALTGR   37
+#define KP_RCTRL    38
+/*
+EQUAL[ 0]  N1[ 1]    N2[ 2]   N3[ 3]   N4[ 4]     N5[ 5] KEYPAD[ 6]                                                                                      MOD[ 7] N6[ 8] N7[ 9]   N8[10]    N9[11]   N0[12]   MINUS[13]
+TAB[14]    Q[15]     W[16]    E[17]    R[18]      T[19]  SP1[20]                                                                                         SP3[21] Y[22]  U[23]    I[24]     O[25]    P[26]    BSLH[27]
+ESC[28]    A[29]     S[30]    D[31]    F[32]      G[33]  SP2[34]                 LCTRL[35]     LALT[36]                     RALT[37]  RCTRL[38]          SP4[39] H[40]  J[41]    K[42]     L[43]    SEMI[44] SQT[45]
+LSHFT[46]  Z[47]     X[48]    C[49]    V[50]      B[51]             &none[52]    &none[53]     HOME[54] &none[55] &none[56] PGUP[57]  &none[58] &none[59]        N[60]  M[61]    COMMA[62] DOT[63]  FSLH[64] RSHFT[65]
+FN[66]     GRAVE[67] CAPS[68] LEFT[69] RIGHT[70]                    BSPC[71]     DEL[72]       END[73]                      PGDN[74]  ENTER[75] SPACE[76]        UP[77] DOWN[78] LBKT[79]  RBKT[80  FN[81]
+*/
+combos {
+  compatible = "zmk,combos";
+  combo_email {
+    timeout-ms = <50>;
+    key-positions = <KP_RALTGR KP_RCTRL KP_E>;
+    bindings = <&macro_email>;
+  };
+};

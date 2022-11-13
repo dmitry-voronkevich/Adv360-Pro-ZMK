@@ -13,6 +13,7 @@
 / {
     behaviors {
       #include "macros.dtsi"
+      #include "combos.dtsi"
 
       hm: homerow_mods {
           compatible = "zmk,behavior-hold-tap";
@@ -84,3 +85,5 @@
     };
   };
 };
+
+// vim:ft=dts
