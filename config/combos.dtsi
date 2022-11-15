@@ -10,9 +10,4 @@ FN[66]     GRAVE[67] CAPS[68] LEFT[69] RIGHT[70]                    BSPC[71]    
 */
 combos {
   compatible = "zmk,combos";
-  combo_email {
-    timeout-ms = <50>;
-    key-positions = <KP_RALTGR KP_RCTRL KP_E>;
-    bindings = <&macro_email>;
-  };
 };
