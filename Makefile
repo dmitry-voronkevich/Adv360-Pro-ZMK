@@ -3,7 +3,7 @@ TIMESTAMP := $(shell date -u +"%Y%m%d%H%M%S")
 
 .PHONY: all clean
 
-all:
+all: private_gen
 	$(DOCKER) build --tag zmk --file Dockerfile .
 	$(DOCKER) run --rm -it --name zmk \
 		-v $(PWD)/firmware:/app/firmware \
@@ -14,3 +14,6 @@ all:
 clean:
 	rm -f firmware/*.uf2
 	$(DOCKER) image rm zmk docker.io/zmkfirmware/zmk-build-arm:stable
+
+private_gen:
+	./private_gen.sh
