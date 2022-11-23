@@ -74,11 +74,11 @@
     };
     fn_h {
       bindings = <
-        &trans       &kp F1 &kp F2 &kp F3 &kp F4 &kp F5  &tog KEYPAD                                                 &mo MOD &kp F6 &kp F7 &kp F8 &kp F9  &kp F10 &kp F11
-        &trans       &trans &trans &trans &trans &trans  &none                                                       &none   &trans &trans &trans &trans  &trans  &kp F12
-        &trans       &trans &trans &trans &trans &trans  &none        &trans &trans             &trans &trans        &none   &trans &trans &trans &trans  &trans  &trans
-        &trans       &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none          &trans &trans &trans &trans  &trans  &trans
-        &mo FN_H     &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                &trans &trans &trans  &trans  &mo FN_H
+        &trans       &kp F1 &kp F2 &kp F3 &kp F4 &kp F5  &tog KEYPAD                                                        &mo MOD &kp F6 &kp F7 &kp F8 &kp F9  &kp F10 &kp F11
+        &trans       &trans &trans &trans &trans &trans  &macro_email                                                       &macro_p1   &trans &trans &trans &trans  &trans  &kp F12
+        &trans       &trans &trans &trans &trans &trans  &macro_q            &trans &trans             &trans &trans        &macro_p2   &trans &trans &trans &trans  &trans  &trans
+        &trans       &trans &trans &trans &trans &trans               &none  &none  &trans &none &none &trans &none  &none              &trans &trans &trans &trans  &trans  &trans
+        &mo FN_H     &trans &trans &trans &trans                      &trans &trans &trans             &trans &trans &trans                    &trans &trans &trans  &trans  &mo FN_H
       >;
     };
     mod {
