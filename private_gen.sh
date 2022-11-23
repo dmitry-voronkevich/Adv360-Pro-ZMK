@@ -7,7 +7,7 @@ then
   exit 0
 fi
 
-for m in macro_p1 macro_ps macro_q
+for m in macro_p1 macro_p2 macro_q
 do
-  echo "ZMK_MACRO($m,bindings=;)" >> $OUTPUT
+  echo "ZMK_MACRO($m,bindings=<&none>;)" >> $OUTPUT
 done
