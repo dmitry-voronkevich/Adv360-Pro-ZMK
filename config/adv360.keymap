@@ -4,31 +4,59 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+// Layers
+#define DEFAULT 0
+#define KEYPAD  1
+#define FN      2
+#define MOD     3
+
 / {
     behaviors {
       #include "macros.dtsi"
+      #include "combos.dtsi"
+      #include "private.dtsi"
 
       hm: homerow_mods {
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS";
           #binding-cells = <2>;
           tapping-term-ms = <200>;
-          quick_tap_ms = <175>;
+          quick-tap-ms = <175>;
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
+      };
+      #define FN_MO_TOG &mo_tog FN_H FN_T
+      mo_tog: behavior_mo_tog {
+          compatible = "zmk,behavior-hold-tap";
+          label = "mo_tog";
+          #binding-cells = <2>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <200>;
+          bindings = <&mo>, <&tog>;
       };
     };
 
   keymap {
     compatible = "zmk,keymap";
 
+    #define APP_ALFRED    LA(SPACE)
+    #define APP_CONTEXTS  LG(LS(SPACE)) 
+    #define APP_THINGS    LG(LC(ESC))
+    #define APP_DAY_ONE   LC(LS(D))
+    #define NONE(X)       &none
+
+    #define APP_1 &kp APP_ALFRED
+    #define APP_2 &kp APP_CONTEXTS
+    #define APP_3 &kp APP_THINGS
+    #define APP_4 &kp APP_DAY_ONE
+
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                            &mo 3 &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  APP_1                                                             APP_3 &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  APP_2           &kp LGUI  &kp LCTRL &kp RCTRL &kp RGUI            APP_4 &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp LALT  &kp RALT                            &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp LSHFT &kp RSHFT &kp ENTER &kp SPACE              &kp DOWN &kp UP    &kp LBKT &kp RBKT &mo 2
       >;
     };
     keypad {
@@ -42,9 +70,9 @@
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &tog 1                                           &mo 3 &kp F6 &kp F7 &kp F8 &kp F9  &kp F10 &kp F11
+        &trans &trans &trans &trans &trans &trans  &m_em                                           &m_p1 &trans &trans &trans &trans  &trans  &kp F12
+        &trans &trans &trans &trans &trans &trans  &m_qp        &trans &trans &trans &trans        &m_p2 &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
@@ -60,3 +88,5 @@
     };
   };
 };
+
+// vim:ft=dts
