@@ -9,13 +9,14 @@
 #define KEYPAD  1
 #define FN      2
 #define MOD     3
-#define NONE(x) &none
+
 
 / {
     behaviors {
       #include "macros.dtsi"
       #include "combos.dtsi"
       #include "private.dtsi"
+      #include "key_pos.dtsi"
 
       hm: homerow_mods {
           compatible = "zmk,behavior-hold-tap";
@@ -35,7 +36,32 @@
           tapping-term-ms = <200>;
           bindings = <&mo>, <&tog>;
       };
+
+    hml: homerow_mod_left {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS_LEFT";
+        flavor = "balanced";
+        #binding-cells = <2>;
+        tapping-term-ms = <280>;
+        quick-tap-ms = <175>;
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <KEYS_R THUMBS_RIGHT>;
+        hold-trigger-on-release;
+      };
+    hmr: homerow_mod_right {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS_RIGHT";
+        flavor = "balanced";
+        #binding-cells = <2>;
+        tapping-term-ms = <280>;
+        quick-tap-ms = <175>;
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
+        hold-trigger-on-release;
+      };
+
     };
+
 
   keymap {
     compatible = "zmk,keymap";
@@ -53,11 +79,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1      &kp N2       &kp N3      &kp N4        &kp N5 &tog 1                                                            &mo 3 &kp N6 &kp N7        &kp N8      &kp N9      &kp N0        &kp MINUS
-        &kp TAB   &kp Q       &kp W        &kp E       &kp R         &kp T  APP_1                                                             APP_3 &kp Y  &kp U         &kp I       &kp O       &kp P         &kp BSLH
-        &kp ESC   &hm LGUI A  &hm LCTRL S  &hm LALT D  &hm LSHIFT F  &kp G  APP_2           &sk LGUI  &sk LCTRL &sk RCTRL &sk RGUI            APP_4 &kp H  &hm RSHIFT J  &hm RALT K  &hm RCTRL L &hm RGUI SEMI &kp SQT
-        &kp LSHFT &kp Z       &kp X        &kp C       &kp V         &kp B                            &sk LALT  &sk RALT                            &kp N  &kp M         &kp COMMA   &kp DOT     &kp FSLH      &kp RSHFT
-        &mo 2     &kp GRAVE   &kp CAPS     &kp LEFT    &kp RIGHT                   &kp BSPC &kp DEL   &sk LSHFT &sk RSHFT &kp ENTER &kp SPACE              &kp DOWN      &kp UP      &kp LBKT    &kp RBKT      &mo 2
+        &kp EQUAL   &kp N1       &kp N2        &kp N3       &kp N4         &kp N5 &tog 1                                                            &mo 3 &kp N6 &kp N7         &kp N8       &kp N9       &kp N0         &kp MINUS
+        &kp TAB     &kp Q        &kp W         &kp E        &kp R          &kp T  APP_1                                                             APP_3 &kp Y  &kp U          &kp I        &kp O        &kp P          &kp BSLH
+        &kp ESC     &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F  &kp G  APP_2           &sk LGUI  &sk LCTRL &sk RCTRL &sk RGUI            APP_4 &kp H  &hmr RSHIFT J  &hmr RALT K  &hmr RCTRL L &hmr RGUI SEMI &kp SQT
+        NONE(LSHFT) &kp Z        &kp X         &kp C        &kp V          &kp B                            &sk LALT  &sk RALT                            &kp N  &kp M          &kp COMMA    &kp DOT      &kp FSLH       NONE(RSHFT)
+        &mo 2       &kp GRAVE    &kp CAPS      &kp LEFT     &kp RIGHT                    &kp BSPC &kp DEL   &sk LSHFT &sk RSHFT &kp ENTER &kp SPACE              &kp DOWN       &kp UP       &kp LBKT     &kp RBKT       &mo 2
       >;
     };
     keypad {
