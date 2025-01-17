@@ -1,2 +1,3 @@
 /firmware/*.uf2
 config/private.dtsi
+.DS_Store

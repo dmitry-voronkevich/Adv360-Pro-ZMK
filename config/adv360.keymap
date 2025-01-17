@@ -83,8 +83,8 @@
 
     #define APP_1 &kp APP_ALFRED
     #define APP_2 &kp APP_CONTEXTS
-    #define APP_3 &kp APP_THINGS
-    #define APP_4 &kp APP_DAY_ONE
+    #define APP_3 &kp PG_UP
+    #define APP_4 &kp PG_DN
 
     default_layer {
       bindings = <
